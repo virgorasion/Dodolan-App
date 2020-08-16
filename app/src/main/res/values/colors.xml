@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#171E30</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <!-- Components background -->
+    <color name="header">#212b46</color>
+    <color name="background">#fefefe</color>
+    <color name="boxesBackground">#f9fafc</color>
+
+    <!--  Charts  -->
+    <!--  Aktif  -->
+    <color name="blueDark">#017bfc</color>
+    <color name="blue">#69b1f9</color>
+    <!--  Kasus  -->
+    <color name="redDark">#f6423d</color>
+    <color name="pink">#f67193</color>
+    <!--  Sembuh  -->
+    <color name="greenDark">#429d48</color>
+    <color name="green">#80ca8f</color>
+    <!--  Meninggal  -->
+    <color name="greyDark">#6c757d</color>
+    <color name="grey">#a7acb2</color>
+
+    <!--  Fonts Color  -->
+    <color name="black">#202d3d</color>
+    <color name="grey1">#8d96a8</color>
+    <color name="grey2">#242c37</color>
+</resources>

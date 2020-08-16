@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Dodolan</string>
+    <string name="statistik">Statistik Keuangan</string>
+    <string name="balance_title">Penghasilan per Bulan</string>
+    <string name="profit_title">Untung per Bulan</string>
+    <string name="order_title">Penjualan per Bulan</string>
+    <string name="debt_title">Hutang per Bulan</string>
+</resources>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.fazahidah.dodolan.DataDummy" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DataDummy">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/header"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/header_style" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/cards_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="order_card, profit_card, balance_card, debt_card, chart_line_card"
+                app:requestStatus="@{viewModel.value}" />
+
+            <include
+                android:id="@+id/balance_card"
+                layout="@layout/info_card"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/box_size"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/medium_box_spaces"
+                android:layout_marginEnd="@dimen/medium_box_spaces"
+                app:layout_constraintEnd_toStartOf="@id/profit_card"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                bind:sectionColor="@{@color/greenDark}"
+                bind:titleText="@{@string/balance_title}"
+                bind:totalStatus="@{viewModel.value}" />
+
+            <include
+                android:id="@+id/profit_card"
+                layout="@layout/info_card"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/box_size"
+                android:layout_marginEnd="@dimen/medium_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/balance_card"
+                app:layout_constraintTop_toTopOf="@id/balance_card"
+                bind:sectionColor="@{@color/greyDark}"
+                bind:titleText="@{@string/profit_title}"
+                bind:totalStatus="@{viewModel.value}" />
+
+            <include
+                android:id="@+id/order_card"
+                layout="@layout/info_card"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/box_size"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                app:layout_constraintEnd_toStartOf="@id/debt_card"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/balance_card"
+                bind:sectionColor="@{@color/greyDark}"
+                bind:titleText="@{@string/order_title}"
+                bind:totalStatus="@{viewModel.value}" />
+
+            <include
+                android:id="@+id/debt_card"
+                layout="@layout/info_card"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/box_size"
+                android:layout_marginEnd="@dimen/medium_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/order_card"
+                app:layout_constraintTop_toTopOf="@id/order_card"
+                bind:sectionColor="@{@color/greyDark}"
+                bind:titleText="@{@string/debt_title}"
+                bind:totalStatus="@{viewModel.value}" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/chart_line_card"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/medium_box_size"
+                android:layout_margin="@dimen/medium_margin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/order_card">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/medium_margin">
+
+                    <TextView
+                        android:id="@+id/title_textview"
+                        style="@style/status_card_title_text"
+                        android:text="@string/statistik"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@string/statistik" />
+
+<!--                    <com.github.mikephil.charting.charts.LineChart-->
+<!--                        android:id="@+id/chart_line"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="0dp"-->
+<!--                        android:layout_marginTop="@dimen/medium_margin"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toBottomOf="@id/title_textview" />-->
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

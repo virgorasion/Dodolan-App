@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="titleText"
+            type="String" />
+
+        <variable
+            name="sectionColor"
+            type="Integer" />
+
+        <variable
+            name="totalValue"
+            type="Integer" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        style="@style/status_card_style"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="4dp"
+        tools:layout_height="170dp"
+        tools:layout_width="170dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/medium_margin">
+
+            <TextView
+                android:id="@+id/title_textview"
+                style="@style/status_card_title_text"
+                android:text="@{titleText}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="STATUS" />
+
+            <TextView
+                android:id="@+id/total_cases_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{totalValue.toString()}"
+                android:textColor="@{sectionColor}"
+                android:textSize="36sp"
+                app:layout_constraintStart_toStartOf="@id/title_textview"
+                app:layout_constraintTop_toBottomOf="@id/title_textview"
+                tools:text="2020"
+                tools:textColor="@color/redDark" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
