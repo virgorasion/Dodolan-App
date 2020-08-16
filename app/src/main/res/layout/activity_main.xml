@@ -7,14 +7,13 @@
     <data>
 
         <variable
-            name="viewModel"
-            type="com.fazahidah.dodolan.DataDummy" />
+            name="dataDummy"
+            type="com.fazahidah.dodolan.model.DataDummy" />
     </data>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".DataDummy">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -26,13 +25,6 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 style="@style/header_style" />
-
-            <androidx.constraintlayout.widget.Group
-                android:id="@+id/cards_group"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:constraint_referenced_ids="order_card, profit_card, balance_card, debt_card, chart_line_card"
-                app:requestStatus="@{viewModel.value}" />
 
             <include
                 android:id="@+id/balance_card"
@@ -47,7 +39,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 bind:sectionColor="@{@color/greenDark}"
                 bind:titleText="@{@string/balance_title}"
-                bind:totalStatus="@{viewModel.value}" />
+                bind:totalValue="@{dataDummy.value}" />
 
             <include
                 android:id="@+id/profit_card"
@@ -60,21 +52,21 @@
                 app:layout_constraintTop_toTopOf="@id/balance_card"
                 bind:sectionColor="@{@color/greyDark}"
                 bind:titleText="@{@string/profit_title}"
-                bind:totalStatus="@{viewModel.value}" />
+                bind:totalValue="@{dataDummy.value}" />
 
             <include
                 android:id="@+id/order_card"
                 layout="@layout/info_card"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/box_size"
-                android:layout_marginStart="@dimen/medium_margin"
                 android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
                 app:layout_constraintEnd_toStartOf="@id/debt_card"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@id/balance_card"
                 app:layout_constraintTop_toBottomOf="@id/balance_card"
                 bind:sectionColor="@{@color/greyDark}"
                 bind:titleText="@{@string/order_title}"
-                bind:totalStatus="@{viewModel.value}" />
+                bind:totalValue="@{dataDummy.value}" />
 
             <include
                 android:id="@+id/debt_card"
@@ -87,7 +79,7 @@
                 app:layout_constraintTop_toTopOf="@id/order_card"
                 bind:sectionColor="@{@color/greyDark}"
                 bind:titleText="@{@string/debt_title}"
-                bind:totalStatus="@{viewModel.value}" />
+                bind:totalValue="@{dataDummy.value}" />
 
 
             <androidx.cardview.widget.CardView
