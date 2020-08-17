@@ -10,7 +10,7 @@
     <dimen name="small_margin">8dp</dimen>
     <dimen name="medium_margin">16dp</dimen>
     <dimen name="medium_box_spaces">16dp</dimen>
-    <dimen name="header_height">170dp</dimen>
+    <dimen name="header_height">90dp</dimen>
     <!--
     Because the window insets on round devices are larger than 15dp, this padding only applies
     to square screens.

@@ -10,10 +10,6 @@
             type="String" />
 
         <variable
-            name="sectionColor"
-            type="Integer" />
-
-        <variable
             name="totalValue"
             type="Integer" />
     </data>
@@ -24,32 +20,144 @@
         android:layout_height="match_parent"
         app:cardCornerRadius="4dp"
         tools:layout_height="170dp"
-        tools:layout_width="170dp">
+        tools:layout_width="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="@dimen/medium_margin">
 
-            <TextView
-                android:id="@+id/title_textview"
-                style="@style/status_card_title_text"
-                android:text="@{titleText}"
+            <ImageView
+                android:id="@+id/balance_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_dompet"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="STATUS" />
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
-                android:id="@+id/total_cases_text"
+                android:id="@+id/total_balance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{totalValue.toString()}"
-                android:textColor="@{sectionColor}"
-                android:textSize="36sp"
-                app:layout_constraintStart_toStartOf="@id/title_textview"
-                app:layout_constraintTop_toBottomOf="@id/title_textview"
-                tools:text="2020"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/balance_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Rp10.000.000"
+                tools:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/balance_title"
+                style="@style/status_card_title_text"
+                android:text="@{titleText}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/balance_icon"
+                tools:text="Pendapatan Bulan Ini" />
+
+            <View
+                android:id="@+id/pembatas_1"
+                android:layout_width="2dp"
+                android:layout_height="45dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/profit_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:src="@drawable/ic_dompet"
+                app:layout_constraintStart_toEndOf="@id/pembatas_1"
+                app:layout_constraintTop_toTopOf="@id/pembatas_1"/>
+
+            <TextView
+                android:id="@+id/total_profit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{totalValue.toString()}"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/profit_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Rp10.000.000"
+                tools:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/profit_title"
+                style="@style/status_card_title_text"
+                android:text="@{titleText}"
+                app:layout_constraintStart_toStartOf="@id/profit_icon"
+                app:layout_constraintTop_toBottomOf="@id/profit_icon"
+                tools:text="Keuntungan Bulan Ini" />
+
+<!--            adsadsa-->
+
+            <ImageView
+                android:id="@+id/order_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:src="@drawable/ic_dompet"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/balance_title"/>
+
+            <TextView
+                android:id="@+id/total_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{totalValue.toString()}"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/order_icon"
+                app:layout_constraintTop_toTopOf="@id/order_icon"
+                tools:text="50"
+                tools:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/order_title"
+                style="@style/status_card_title_text"
+                android:text="@{titleText}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/order_icon"
+                tools:text="Total Pesanan Hari Ini" />
+
+            <View
+                android:id="@+id/pembatas_2"
+                android:layout_width="2dp"
+                android:layout_height="45dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/order_icon"/>
+
+            <ImageView
+                android:id="@+id/debt_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:src="@drawable/ic_dompet"
+                app:layout_constraintStart_toEndOf="@id/pembatas_2"
+                app:layout_constraintTop_toTopOf="@id/pembatas_2"/>
+
+            <TextView
+                android:id="@+id/total_debt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{totalValue.toString()}"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/debt_icon"
+                app:layout_constraintTop_toTopOf="@id/debt_icon"
+                tools:text="21"
                 tools:textColor="@color/redDark" />
+
+            <TextView
+                android:id="@+id/debt_title"
+                style="@style/status_card_title_text"
+                android:text="@{titleText}"
+                app:layout_constraintStart_toStartOf="@id/debt_icon"
+                app:layout_constraintTop_toBottomOf="@id/debt_icon"
+                tools:text="Total Hutang" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>

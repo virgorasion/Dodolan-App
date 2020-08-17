@@ -7,14 +7,13 @@
     <data>
 
         <variable
-            name="viewModel"
-            type="com.fazahidah.dodolan.DataDummy" />
+            name="dataDummy"
+            type="com.fazahidah.dodolan.model.DataDummy" />
     </data>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".DataDummy">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -27,67 +26,96 @@
                 app:layout_constraintTop_toTopOf="parent"
                 style="@style/header_style" />
 
-            <androidx.constraintlayout.widget.Group
-                android:id="@+id/cards_group"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:constraint_referenced_ids="order_card, profit_card, balance_card, debt_card, chart_line_card"
-                app:requestStatus="@{viewModel.value}" />
-
             <include
-                android:id="@+id/balance_card"
+                android:id="@+id/info_card"
                 layout="@layout/info_card"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/box_size"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/medium_margin"
                 android:layout_marginTop="@dimen/medium_box_spaces"
                 android:layout_marginEnd="@dimen/medium_box_spaces"
-                app:layout_constraintEnd_toStartOf="@id/profit_card"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                bind:sectionColor="@{@color/greenDark}"
                 bind:titleText="@{@string/balance_title}"
-                bind:totalStatus="@{viewModel.value}" />
+                bind:totalValue="@{dataDummy.value}" />
 
-            <include
-                android:id="@+id/profit_card"
-                layout="@layout/info_card"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/box_size"
-                android:layout_marginEnd="@dimen/medium_margin"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/balance_card"
-                app:layout_constraintTop_toTopOf="@id/balance_card"
-                bind:sectionColor="@{@color/greyDark}"
-                bind:titleText="@{@string/profit_title}"
-                bind:totalStatus="@{viewModel.value}" />
-
-            <include
-                android:id="@+id/order_card"
-                layout="@layout/info_card"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/box_size"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/menu_card"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:cardCornerRadius="4dp"
                 android:layout_marginStart="@dimen/medium_margin"
-                android:layout_marginTop="@dimen/medium_margin"
-                app:layout_constraintEnd_toStartOf="@id/debt_card"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/balance_card"
-                bind:sectionColor="@{@color/greyDark}"
-                bind:titleText="@{@string/order_title}"
-                bind:totalStatus="@{viewModel.value}" />
+                android:layout_marginTop="@dimen/medium_box_spaces"
+                android:layout_marginEnd="@dimen/medium_box_spaces"
+                app:layout_constraintTop_toBottomOf="@id/info_card">
 
-            <include
-                android:id="@+id/debt_card"
-                layout="@layout/info_card"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/box_size"
-                android:layout_marginEnd="@dimen/medium_margin"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/order_card"
-                app:layout_constraintTop_toTopOf="@id/order_card"
-                bind:sectionColor="@{@color/greyDark}"
-                bind:titleText="@{@string/debt_title}"
-                bind:totalStatus="@{viewModel.value}" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/medium_margin"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <androidx.cardview.widget.CardView
+                            app:cardCornerRadius="6dp"
+                            android:layout_height="50dp"
+                            android:layout_width="50dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_dompet"/>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:text="@string/nama_menu"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/medium_margin"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <androidx.cardview.widget.CardView
+                            app:cardCornerRadius="6dp"
+                            android:layout_height="50dp"
+                            android:layout_width="50dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_dompet"/>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:text="@string/nama_menu"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
 
             <androidx.cardview.widget.CardView
@@ -98,7 +126,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/order_card">
+                app:layout_constraintTop_toBottomOf="@id/menu_card">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
