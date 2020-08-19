@@ -67,6 +67,8 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:id="@+id/menu_1"
+                        android:onClick="clickHandlerFunction"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"

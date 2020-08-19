@@ -2,6 +2,8 @@ package com.fazahidah.dodolan
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.LinearLayout
 import androidx.databinding.DataBindingUtil
 import com.fazahidah.dodolan.databinding.ActivityMainBinding
 import com.fazahidah.dodolan.model.DataDummy
@@ -16,5 +18,9 @@ class MainActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.dataDummy = data
+    }
+
+    fun clickHandlerFunction(view: View) {
+
     }
 }
