@@ -7,29 +7,20 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+    <Button
+        android:id="@+id/button_login"
         android:layout_width="170dp"
         android:layout_height="50dp"
         android:layout_marginBottom="216dp"
-        app:cardBackgroundColor="#094776"
-        app:cardCornerRadius="50dp"
-        app:cardElevation="20dp"
+        android:text="@string/login"
+        android:background="@drawable/mybutton"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/login"
-            android:textColor="@android:color/background_light"
-            android:textSize="24sp"
-            app:fontFamily="sans-serif" />
-    </androidx.cardview.widget.CardView>
+    </Button>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
@@ -39,7 +30,7 @@
         android:layout_marginBottom="15dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintBottom_toTopOf="@+id/button_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +66,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="77dp"
-        android:layout_marginLeft="77dp"
         android:text="@string/belum_memiliki_akun"
         android:textColor="#ffff"
         android:textSize="8pt"
@@ -83,7 +73,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/button_login"
         app:layout_constraintVertical_bias="0.163" />
 
     <TextView
@@ -91,7 +81,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="77dp"
-        android:layout_marginRight="77dp"
         android:text="@string/register"
         android:textColor="#094776"
         android:textSize="8pt"
@@ -99,7 +88,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/button_login"
         app:layout_constraintVertical_bias="0.163" />
 
     <ImageView

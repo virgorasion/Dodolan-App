@@ -8,6 +8,7 @@
     <color name="header">#5FD3FF</color>
     <color name="background">#fefefe</color>
     <color name="boxesBackground">#f9fafc</color>
+    <color name="button_login">#094776</color>
 
     <!--  Charts  -->
     <!--  Aktif  -->
