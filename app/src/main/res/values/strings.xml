@@ -5,4 +5,12 @@
     <string name="profit_title">Untung per Bulan</string>
     <string name="order_title">Penjualan per Bulan</string>
     <string name="debt_title">Hutang per Bulan</string>
+    <string name="login">Login</string>
+    <string name="username_email">Username/Email</string>
+    <string name="Password">Password</string>
+    <string name="belum_memiliki_akun">Belum memiliki akun?</string>
+    <string name="register">Register.</string>
+
+    <string name="nama_menu">Nama Menu</string>
+    <string name="registerbutton">Register</string>
 </resources>
