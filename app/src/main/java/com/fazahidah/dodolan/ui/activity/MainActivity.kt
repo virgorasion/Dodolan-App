@@ -1,10 +1,10 @@
-package com.fazahidah.dodolan
+package com.fazahidah.dodolan.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.LinearLayout
 import androidx.databinding.DataBindingUtil
+import com.fazahidah.dodolan.R
 import com.fazahidah.dodolan.databinding.ActivityMainBinding
 import com.fazahidah.dodolan.model.DataDummy
 
@@ -16,7 +16,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this,
+            R.layout.activity_main
+        )
         binding.dataDummy = data
     }
 
