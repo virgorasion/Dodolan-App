@@ -4,7 +4,7 @@ package com.fazahidah.dodolan.model
 // Simple Data User will do for the app for now
 // TODO: update User & make data class for Database
 
-data class User (
+data class User(
     val name: String,
     val username: String,
     val password: String,
