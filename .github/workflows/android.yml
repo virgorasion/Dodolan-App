@@ -2,9 +2,9 @@ name: Android CI
 
 on:
   push:
-    branches: [ master, dev ]
+    branches: [ dev ]
   pull_request:
-    branches: [ master, dev ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -17,5 +17,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: make gradlew executable
+      run: chmod +x ./gradlew
     - name: Build with Gradle
       run: ./gradlew build
