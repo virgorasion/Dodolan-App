@@ -84,7 +84,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:src="@drawable/ic_dompet"
-                                android:contentDescription="TODO" />
+                                tools:ignore="ContentDescription" />
 
                         </androidx.cardview.widget.CardView>
 
