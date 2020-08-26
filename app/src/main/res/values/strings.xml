@@ -8,9 +8,10 @@
     <string name="login">Login</string>
     <string name="username_email">Username/Email</string>
     <string name="Password">Password</string>
-    <string name="belum_memiliki_akun">Belum memiliki akun?</string>
-    <string name="register">Register.</string>
+    <string name="no_acc">Belum memiliki akun?</string>
+    <string name="has_acc">Sudah memiliki akun ?</string>
+    <string name="register">Register</string>
 
     <string name="nama_menu">Nama Menu</string>
-    <string name="registerbutton">Register</string>
+    <string name="registerButton">Register</string>
 </resources>
